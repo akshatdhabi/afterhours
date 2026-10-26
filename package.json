@@ -1,0 +1,53 @@
+{
+  "name": "afterhours-game-show",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server/index.js --dev",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "build": "vite build",
+    "test": "node --test test/*.test.js",
+    "check": "npm test && npm run build",
+    "dev:cloud": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "check:cloud": "npm run build && wrangler deploy --dry-run --outdir .worker-build",
+    "test:cloud": "npm run build && node test/cloud-runner.js",
+    "format": "prettier --write src server worker test scripts *.js *.json *.jsonc *.md docs .github",
+    "format:check": "prettier --check src server worker test scripts *.js *.json *.jsonc *.md docs .github",
+    "questions:fetch": "node scripts/fetch-questions.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "lucide-react": "^0.468.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "ws": "^8.18.3",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10",
+    "vite": "^7.1.0",
+    "wrangler": "^4.152.0"
+  },
+  "description": "A real-time multiplayer trivia game show for 2\u20136 friends, with an authoritative server and a neon 2D interface.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akshatdhabi/afterhours.git"
+  },
+  "homepage": "https://afterhours-game-show.afterhours-game-show.workers.dev/",
+  "bugs": {
+    "url": "https://github.com/akshatdhabi/afterhours/issues"
+  },
+  "overrides": {
+    "miniflare": {
+      "undici": "^7.30.1"
+    }
+  }
+}

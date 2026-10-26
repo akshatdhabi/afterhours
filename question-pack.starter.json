@@ -1,0 +1,479 @@
+{
+  "title": "Bring your own questions",
+  "description": "No questions are bundled. Import a CSV or JSON pack, or fill in the editor before starting.",
+  "rounds": [
+    {
+      "name": "The main event",
+      "categories": [
+        {
+          "name": "Category 1",
+          "icon": "\u2726",
+          "clues": [
+            {
+              "id": "r0c0q0",
+              "value": 200,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c0q1",
+              "value": 400,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c0q2",
+              "value": 600,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c0q3",
+              "value": 800,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c0q4",
+              "value": 1000,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            }
+          ]
+        },
+        {
+          "name": "Category 2",
+          "icon": "\u2726",
+          "clues": [
+            {
+              "id": "r0c1q0",
+              "value": 200,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c1q1",
+              "value": 400,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c1q2",
+              "value": 600,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c1q3",
+              "value": 800,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c1q4",
+              "value": 1000,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            }
+          ]
+        },
+        {
+          "name": "Category 3",
+          "icon": "\u2726",
+          "clues": [
+            {
+              "id": "r0c2q0",
+              "value": 200,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c2q1",
+              "value": 400,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c2q2",
+              "value": 600,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": true
+            },
+            {
+              "id": "r0c2q3",
+              "value": 800,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c2q4",
+              "value": 1000,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            }
+          ]
+        },
+        {
+          "name": "Category 4",
+          "icon": "\u2726",
+          "clues": [
+            {
+              "id": "r0c3q0",
+              "value": 200,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c3q1",
+              "value": 400,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c3q2",
+              "value": 600,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c3q3",
+              "value": 800,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c3q4",
+              "value": 1000,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            }
+          ]
+        },
+        {
+          "name": "Category 5",
+          "icon": "\u2726",
+          "clues": [
+            {
+              "id": "r0c4q0",
+              "value": 200,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c4q1",
+              "value": 400,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c4q2",
+              "value": 600,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c4q3",
+              "value": 800,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c4q4",
+              "value": 1000,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            }
+          ]
+        },
+        {
+          "name": "Category 6",
+          "icon": "\u2726",
+          "clues": [
+            {
+              "id": "r0c5q0",
+              "value": 200,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c5q1",
+              "value": 400,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c5q2",
+              "value": 600,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c5q3",
+              "value": 800,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            },
+            {
+              "id": "r0c5q4",
+              "value": 1000,
+              "question": "",
+              "answer": "",
+              "choices": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "accepted": [],
+              "dailyDouble": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final": {
+    "category": "Final category",
+    "question": "",
+    "answer": "",
+    "choices": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "accepted": []
+  }
+}

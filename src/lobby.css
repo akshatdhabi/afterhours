@@ -1,0 +1,877 @@
+/* Setup and dialogs share one readable scale and one card system. */
+.lobby-layout {
+  width: min(100%, 1360px);
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 40px 32px 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 304px;
+  grid-template-areas: "heading invite" "players invite" "settings invite" "start invite";
+  gap: 26px 28px;
+  align-items: start;
+}
+.lobby-main {
+  display: contents;
+}
+.lobby-layout > *,
+.lobby-main > *,
+.lobby-form > *,
+.lobby-form label,
+.lobby-aside {
+  min-width: 0;
+}
+.lobby-layout .page-heading {
+  grid-area: heading;
+}
+.lobby-layout .page-heading .eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  line-height: 1.5;
+}
+.lobby-layout .page-heading h1 {
+  font-size: clamp(32px, 3.6vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+  margin: 12px 0;
+  color: #eef4ff;
+}
+.lobby-layout .page-heading h1 em {
+  font-family: inherit;
+  font-style: normal;
+  color: #81eaff;
+}
+.lobby-layout .page-heading p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  color: #a8bbd3;
+}
+.lobby-roster {
+  grid-area: players;
+}
+.lobby-title {
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.lobby-title h2 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+.lobby-title h2 > span {
+  font-size: 14px;
+  color: #9db4cf;
+}
+.lobby-title .pill {
+  padding: 7px 10px;
+  font-size: 12px;
+  white-space: normal;
+  line-height: 1.4;
+}
+.lobby-layout .seat-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 14px;
+}
+.lobby-layout .seat {
+  padding: 18px;
+  min-height: 188px;
+  border-radius: 12px;
+  border-color: #6889b151;
+}
+.lobby-layout .seat.occupied {
+  border-color: #4aa6bc80;
+}
+.lobby-layout .seat-top {
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.lobby-layout .seat-number {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #a3bbd6;
+}
+.lobby-layout .presence {
+  font-size: 11px;
+  color: #adc4dd;
+}
+.lobby-layout .avatar {
+  width: 44px;
+  height: 44px;
+  margin: 18px 0 12px;
+  font-size: 16px;
+}
+.lobby-layout .seat h3 {
+  color: #eaf3ff;
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0 0 7px;
+  overflow-wrap: anywhere;
+}
+.lobby-layout .seat p {
+  color: #a5b9d3;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.lobby-layout .seat-team {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #bfd0e5;
+}
+.lobby-layout .seat-team select {
+  font-size: 15px;
+  min-height: 44px;
+  padding: 9px 12px;
+}
+.lobby-layout .seat-release {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 10px;
+  margin-top: 12px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #b8cbdf;
+  border: 1px solid #779bb546;
+  border-radius: 6px;
+}
+.lobby-layout .seat-release:hover {
+  color: #ffb1ca;
+  border-color: #ff729c80;
+}
+.lobby-layout .lobby-settings {
+  grid-area: settings;
+  display: block;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid #6e93bd40;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #142137, #101a2b 65%);
+  box-shadow: inset 0 1px #c4ebff08;
+}
+.lobby-layout .settings-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #7698bd2b;
+}
+.lobby-layout .settings-heading > div {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+.lobby-layout .settings-heading .eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+}
+.lobby-layout .settings-heading h3 {
+  font-size: 21px;
+  margin: 8px 0;
+  color: #f0f5ff;
+  overflow-wrap: anywhere;
+}
+.lobby-layout .settings-heading p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: #a9bfd9;
+  max-width: 58ch;
+}
+.lobby-layout .settings-heading .btn {
+  flex: 0 1 auto;
+  font-size: 13px;
+  min-height: 44px;
+  padding: 11px 14px;
+}
+.lobby-layout .lobby-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+}
+.lobby-form .wide-field {
+  grid-column: 1 / -1;
+}
+.lobby-form label:not(.toggle-row) {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+.lobby-form label > input,
+.lobby-form label > select {
+  margin: 0;
+}
+.lobby-form .timing-settings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  align-items: start;
+}
+.lobby-form .seating-settings {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.lobby-form .timing-settings select {
+  min-height: 48px;
+  padding: 11px 12px;
+  font-size: 16px;
+}
+.lobby-form .toggle-row {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #7597ba35 !important;
+  border-radius: 9px;
+  background: #0a14249c;
+  gap: 18px;
+}
+.lobby-form .toggle-row strong {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #e6f0ff;
+  font-weight: 550;
+}
+.lobby-form .toggle-row small {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #9fb6d2;
+  margin-top: 4px;
+}
+.lobby-form .team-name-settings {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 16px;
+  margin: 0;
+}
+.lobby-form .input-with-button {
+  gap: 8px;
+  min-width: 0;
+}
+.lobby-form .input-with-button input {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+.lobby-form .input-with-button button {
+  flex: 0 0 44px;
+  width: 44px;
+  min-height: 48px;
+  margin: 0;
+  border: 1px solid #73a5c263;
+  border-radius: 8px;
+  color: #a3f0ff;
+  background: #18364b;
+}
+.lobby-form > .muted {
+  grid-column: 1 / -1;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.lobby-layout .lobby-bottom {
+  grid-area: start;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 20px;
+  align-items: center;
+  border: 1px solid #6f91b93d;
+  border-radius: 12px;
+  background: #101b2d;
+}
+.lobby-layout .lobby-bottom .btn {
+  min-height: 50px;
+  padding: 13px 18px;
+  font-size: 15px;
+  flex: 0 1 auto;
+}
+.lobby-layout .lobby-bottom .btn:disabled {
+  opacity: 1;
+  background: #26374e;
+  border-color: #6a85a34d;
+  color: #a9bad0;
+  box-shadow: none;
+}
+.lobby-start-copy {
+  flex: 1 1 220px;
+  display: grid;
+  gap: 6px;
+}
+.lobby-start-copy strong {
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 550;
+  color: #c6eefa;
+}
+.lobby-start-copy > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #98b0cb;
+}
+.lobby-bottom .waiting-note {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.lobby-aside {
+  grid-area: invite;
+  position: sticky;
+  top: 24px;
+}
+.lobby-aside .invite-card {
+  display: block;
+  background:
+    radial-gradient(ellipse at 0 0, #153d50, transparent 75%), #101d30;
+  color: #eaf5ff;
+  padding: 22px;
+  border: 1px solid #57c5df55;
+  border-radius: 14px;
+}
+.invite-card:after {
+  display: none;
+}
+.invite-card .eyebrow {
+  color: #97d8e9;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 1.3px;
+}
+.lobby-aside .invite-card h3 {
+  font-family: "Space Grotesk Variable", sans-serif;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+  margin: 10px 0 20px;
+  color: #ecf6ff;
+}
+.lobby-aside .invite-code {
+  padding: 12px;
+  border: 1px solid #6aabc455;
+  border-radius: 8px;
+  background: #081526;
+  gap: 10px;
+}
+.lobby-aside .invite-code > span {
+  font-size: 27px;
+  letter-spacing: 2.5px;
+  color: #9df0ff;
+  white-space: nowrap;
+}
+.lobby-aside .invite-code .icon-btn {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  color: #c4ecfa;
+}
+.lobby-aside .invite-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #abc5db;
+  margin: 14px 0;
+}
+.lobby-aside .qr-wrap {
+  padding: 4px 0 20px;
+}
+.lobby-aside .qr-wrap img {
+  width: 132px;
+  height: 132px;
+  border: 8px solid #fff;
+  border-radius: 8px;
+  background: #fff;
+}
+.lobby-aside .invite-card > .btn {
+  padding: 11px 12px;
+  min-height: 46px;
+  font-size: 14px;
+  margin: 0;
+}
+.lobby-aside .display-link {
+  margin-top: 10px;
+  padding: 10px 8px;
+  min-height: 44px;
+  border: 1px solid #6998b850;
+  border-radius: 8px;
+  color: #bdeeff;
+  background: #10273a;
+  font-size: 13px;
+  gap: 7px;
+}
+.lobby-aside .invite-card > .small:empty {
+  display: none;
+}
+.lobby-aside .host-note {
+  display: block;
+  margin: 18px 0 0;
+  padding: 20px;
+  border-color: #6f93bc3d;
+  background: #0e192a;
+  border-radius: 12px;
+}
+.lobby-aside .host-note h3 {
+  font-size: 16px;
+  margin: 0 0 10px;
+  color: #dfefff;
+}
+.lobby-aside .host-note p,
+.lobby-aside .host-note p:last-child {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #9fb8d3;
+}
+/* Forms use readable labels, consistent controls, and enough space for touch. */
+.modal {
+  padding: 28px;
+  width: 520px;
+}
+.modal.wide {
+  width: 800px;
+}
+.modal-head {
+  margin-bottom: 20px;
+  gap: 16px;
+  align-items: flex-start;
+}
+.modal-head h2 {
+  font-size: 26px;
+  line-height: 1.15;
+  padding-top: 4px;
+  overflow-wrap: anywhere;
+}
+.modal-head .icon-btn {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+}
+.modal label,
+.modal legend {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d3e1f3;
+}
+.modal label:not(.toggle-row):not(.upload) {
+  display: grid;
+  gap: 8px;
+}
+.modal label > input,
+.modal label > select,
+.modal label > textarea {
+  margin-top: 0;
+}
+.modal input:not([type="checkbox"]):not([type="range"]):not([type="file"]),
+.modal select,
+.modal textarea,
+.lobby-form input:not([type="checkbox"]),
+.lobby-form select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 11px 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  border-radius: 8px;
+  background: #0b1527;
+  border-color: #6b90b45c;
+  color: #edf4ff;
+}
+.modal input::placeholder {
+  color: #859ab6;
+  opacity: 1;
+}
+.modal .entry-form {
+  display: grid;
+  gap: 18px;
+}
+.entry-form > p,
+.modal .entry-form > label,
+.modal .entry-form fieldset {
+  margin: 0;
+}
+.modal .entry-form > p,
+.modal > .muted {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.modal .entry-form .timing-settings {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin: 0;
+}
+.modal .entry-form .timing-settings > label {
+  min-width: 0;
+  flex: 1;
+}
+.modal .mode-option {
+  padding: 16px;
+  min-height: 148px;
+}
+.modal .mode-option strong {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 550;
+}
+.modal .mode-option small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.modal .mode-option svg {
+  margin-bottom: 10px;
+}
+.modal .btn {
+  min-height: 46px;
+  padding: 11px 16px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.modal .toggle-row {
+  display: flex;
+  padding: 16px 0;
+  gap: 18px;
+  margin: 0;
+}
+.modal .toggle-row > span {
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.modal .toggle-row strong {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e3efff;
+}
+.modal .toggle-row small {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a6bdd7;
+}
+.modal .toggle-row input[type="checkbox"],
+.lobby-form .toggle-row input[type="checkbox"] {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+  margin: 0;
+}
+.modal .settings-stack {
+  gap: 16px;
+}
+.modal .settings-stack .muted {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.modal input[type="range"] {
+  appearance: none;
+  min-height: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.modal input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px;
+  background: #365779;
+  border-radius: 5px;
+}
+.modal input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  background: #79edff;
+  border: 3px solid #13243b;
+  margin-top: -8px;
+  box-shadow: 0 0 0 1px #70dbed80;
+}
+.modal input[type="range"]::-moz-range-track {
+  height: 5px;
+  background: #365779;
+  border-radius: 5px;
+}
+.modal input[type="range"]::-moz-range-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: #79edff;
+  border: 2px solid #13243b;
+}
+.modal .form-foot {
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.modal .form-error {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.modal .rules-copy p,
+.modal .rules-copy ol {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.modal.pack-editor > label {
+  margin-bottom: 18px;
+}
+.modal.pack-editor .pack-toolbar {
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.modal.pack-editor .editor-selectors {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 14px;
+  margin: 0 0 18px;
+}
+.modal.pack-editor .editor-selectors label {
+  min-width: 0;
+  margin: 0;
+}
+.modal.pack-editor .choice-editor {
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.modal.pack-editor .choice-editor label {
+  min-width: 0;
+  margin: 0;
+}
+.modal.pack-editor .toggle-row {
+  margin-bottom: 18px;
+}
+.modal .round-tools {
+  margin: 0;
+  padding-top: 20px;
+}
+@media (max-height: 800px) {
+  .lobby-aside {
+    position: static;
+  }
+}
+@media (max-width: 1080px) {
+  .lobby-layout {
+    padding: 32px 24px 44px;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 24px;
+  }
+  .lobby-layout .lobby-settings {
+    padding: 20px;
+  }
+  .lobby-layout .lobby-form {
+    grid-template-columns: 1fr;
+  }
+  .lobby-form .wide-field {
+    grid-column: auto;
+  }
+  .lobby-form .seating-settings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 800px) {
+  .lobby-layout {
+    padding: 28px 20px 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "heading" "invite" "players" "settings" "start";
+    gap: 24px;
+  }
+  .lobby-aside {
+    position: static;
+  }
+  .lobby-aside .host-note {
+    display: none;
+  }
+  .lobby-aside .invite-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 112px;
+    grid-template-areas: "intro qr" "hint qr" "code code" "copy display" "status status";
+    padding: 20px;
+    gap: 12px 16px;
+  }
+  .invite-intro {
+    grid-area: intro;
+  }
+  .lobby-aside .invite-card h3 {
+    font-size: 25px;
+    margin: 8px 0 0;
+  }
+  .lobby-aside .invite-card > p {
+    grid-area: hint;
+    margin: 0;
+  }
+  .lobby-aside .invite-code {
+    grid-area: code;
+  }
+  .lobby-aside .qr-wrap {
+    grid-area: qr;
+    padding: 0;
+    align-items: center;
+  }
+  .lobby-aside .qr-wrap img {
+    width: 96px;
+    height: 96px;
+  }
+  .lobby-aside .invite-card > .btn {
+    grid-area: copy;
+    font-size: 13px;
+    min-width: 0;
+  }
+  .lobby-aside .display-link {
+    grid-area: display;
+    margin: 0;
+    font-size: 13px;
+    min-width: 0;
+  }
+  .lobby-aside .invite-card > .small {
+    grid-area: status;
+  }
+  .lobby-layout .lobby-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .lobby-form .wide-field {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 520px) {
+  .lobby-layout {
+    padding: 24px 16px 36px;
+    gap: 22px;
+  }
+  .lobby-layout .page-heading h1 {
+    font-size: 34px;
+    letter-spacing: -1.3px;
+  }
+  .lobby-layout .page-heading p {
+    font-size: 14px;
+  }
+  .lobby-layout .seat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .lobby-layout .seat {
+    padding: 14px;
+    min-height: 185px;
+  }
+  .lobby-layout .seat h3 {
+    font-size: 20px;
+  }
+  .lobby-layout .avatar {
+    margin-top: 14px;
+  }
+  .lobby-title .pill {
+    font-size: 11px;
+  }
+  .lobby-layout .lobby-settings {
+    padding: 18px;
+  }
+  .lobby-layout .settings-heading {
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+  }
+  .lobby-layout .settings-heading h3 {
+    font-size: 20px;
+  }
+  .lobby-layout .settings-heading .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .lobby-layout .lobby-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .lobby-form .wide-field {
+    grid-column: auto;
+  }
+  .lobby-form .timing-settings {
+    gap: 8px;
+  }
+  .lobby-form .timing-settings label {
+    font-size: 12px;
+  }
+  .lobby-form .timing-settings select {
+    padding: 10px 8px;
+  }
+  .lobby-layout .lobby-bottom {
+    padding: 18px;
+    gap: 14px;
+  }
+  .lobby-layout .lobby-bottom .btn {
+    width: 100%;
+    font-size: 15px;
+  }
+  .lobby-aside .invite-card {
+    padding: 18px;
+    gap: 12px;
+  }
+  .lobby-aside .invite-card h3 {
+    font-size: 23px;
+  }
+  .lobby-aside .invite-code > span {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+  .modal-backdrop {
+    padding: 12px;
+  }
+  .modal,
+  .modal.wide {
+    padding: 20px;
+    max-height: calc(100dvh - 24px);
+    border-radius: 14px;
+  }
+  .modal-head h2 {
+    font-size: 24px;
+  }
+  .modal .mode-option {
+    padding: 14px 12px;
+    min-height: 140px;
+  }
+  .modal .entry-form .timing-settings {
+    align-items: flex-end;
+  }
+  .modal.pack-editor .editor-selectors {
+    grid-template-columns: 1fr 1fr;
+  }
+  .modal.pack-editor .editor-selectors label:nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .modal.pack-editor .choice-editor {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 360px) {
+  .lobby-aside .invite-card {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    padding: 16px;
+  }
+  .lobby-aside .qr-wrap img {
+    width: 80px;
+    height: 80px;
+  }
+  .lobby-aside .invite-card h3 {
+    font-size: 21px;
+  }
+  .lobby-aside .invite-card > .btn,
+  .lobby-aside .display-link {
+    font-size: 12px;
+    padding: 10px 8px;
+    gap: 5px;
+  }
+  .lobby-aside .invite-code > span {
+    font-size: 25px;
+  }
+  .modal .entry-form .timing-settings {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.lobby-form .seating-settings > :only-child {
+  grid-column: 1 / -1;
+}
