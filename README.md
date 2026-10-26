@@ -14,7 +14,9 @@ A real-time multiplayer trivia game show for 2–6 people, with a neon 2D board,
 
 </div>
 
-![Afterhours neon 2D interface, with host and join controls](docs/images/home.png)
+[![The full Afterhours board with six categories and four connected demo players](docs/images/board-desktop.jpg)](docs/images/board-desktop.jpg)
+
+<p align="center"><sub>Actual app captures with synthetic players and a demonstration question. No private question-library content.</sub></p>
 
 ## The game
 
@@ -30,6 +32,34 @@ Create a private room, send the link and play from phones, laptops or a shared T
 - **Recovery:** refresh/reconnect in the same browser to restore your seat. Rooms expire after 12 hours by default.
 
 **Question content is intentionally separate.** This repository does not contain the hosted game's question library, its authoring sources or answer keys. It starts with a blank pack. Import your own questions before starting a game. The hosted demo is deployed separately and has its own private content.
+
+## See it in motion
+
+[![A real multiplayer round: select a clue, synchronize GO, buzz, answer and update the score](docs/images/gameplay.gif)](docs/images/gameplay.gif)
+
+A short walkthrough of the actual client and server. Orion buzzes, answers correctly and takes the next pick. Timing is condensed; the GIF has no audio.
+
+<table>
+  <tr>
+    <th width="68%">The question stays readable</th>
+    <th width="32%">Your phone is the buzzer</th>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/images/question-desktop.jpg"><img src="docs/images/question-desktop.jpg" alt="Desktop question screen with four clear answer choices" width="760" /></a></td>
+    <td align="center"><a href="docs/images/buzzer-mobile.jpg"><img src="docs/images/buzzer-mobile.gif" alt="Live phone buzzer with all four answer choices visible and animated signal hardware" width="270" /></a></td>
+  </tr>
+</table>
+
+Prefer still images? Open the [desktop board](docs/images/board-desktop.jpg), [phone buzzer](docs/images/buzzer-mobile.jpg) or [answer reveal](docs/images/result-desktop.jpg).
+
+<details>
+<summary>Landing page and answer feedback</summary>
+
+![Wide landing page with host and join controls](docs/images/home-desktop.jpg)
+
+![Server-confirmed correct answer, score change and revealed choice](docs/images/result-desktop.jpg)
+
+</details>
 
 ## Run locally
 
@@ -71,6 +101,13 @@ No Cloudflare login, external database or API key is required for local play. Lo
 | `attribution`           | Optional source/license notice; retained in pack exports                     |
 
 Commas, quoted text, multiline cells and spreadsheet BOMs are supported. Imports reject incomplete boards, duplicate choices, invalid keys and malformed values without replacing the current draft. The same pack is validated again on the server. Files are limited to 145 KB in the UI.
+
+<details>
+<summary>Preview the CSV/JSON question editor</summary>
+
+![Blank question editor with CSV template download, CSV/JSON import, choices and Daily Double controls](docs/images/editor-desktop.jpg)
+
+</details>
 
 ### Fetch an independent public pack
 
